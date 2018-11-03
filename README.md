@@ -1,3 +1,3 @@
-# secureIOT-hub
+# secureIOT
 
 idk rn man just starting out
