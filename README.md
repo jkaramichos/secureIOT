@@ -1,3 +1,5 @@
 # secureIOT
 
-idk rn man just starting out
+copy the files into your /var/www/html/ directory.
+
+You need a LAMP server to get going.
