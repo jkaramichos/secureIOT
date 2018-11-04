@@ -6,6 +6,7 @@ function sec_session_start() {
     $secure = SECURE;
     // This stops JavaScript being able to access the session id.
     $httponly = true;
+    
     // Forces sessions to only use cookies.
     if (ini_set('session.use_only_cookies', 1) === FALSE) {
         header("Location: ../error.php?err=Could not initiate a safe session (ini_set)");
@@ -24,7 +25,7 @@ function sec_session_start() {
 
 function login($email, $password, $mysqli) {
     // Using prepared statements means that SQL injection is not possible. 
-    if ($stmt = $mysqli->prepare("SELECT id, username, password 
+    if ($stmt = $mysqli->prepare("SELECT member_id, username, password 
         FROM members
        WHERE email = ?
         LIMIT 1")) {
@@ -126,7 +127,7 @@ function login_check($mysqli) {
  
         if ($stmt = $mysqli->prepare("SELECT password 
                                       FROM members 
-                                      WHERE id = ? LIMIT 1")) {
+                                      WHERE member_id = ? LIMIT 1")) {
             // Bind "$user_id" to parameter. 
             $stmt->bind_param('i', $user_id);
             $stmt->execute();   // Execute the prepared query.

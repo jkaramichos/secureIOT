@@ -1,3 +1,21 @@
+<?php
+include_once 'includes/register.inc.php';
+include_once 'includes/functions.php';
+
+$query = "SELECT username FROM members ORDER BY member_id DESC LIMIT 1";
+$result = $mysqli->query($query); 
+
+$data = $result->fetch_assoc();
+$username = $data["username"];
+
+$sql = "CREATE TABLE $username(
+        device_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+        device_name VARCHAR(30) NOT NULL
+        )";
+$mysqli->query($sql);
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
