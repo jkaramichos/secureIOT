@@ -57,9 +57,7 @@ sec_session_start();
             <form action="includes/process_add_device.php" method="post" name="add_device_form">
                 Device Name: <input type="text" name="device_name_text"/>
                 <input type="submit" class="button" name="add_device_btn" value="Add Device" />
-                
             </form>
-            
             
             <p>Return to <a href="welcome_page.php">welcome page</a></p>
             <p>Return to <a href="index.php">login page</a></p>
