@@ -15,11 +15,12 @@ sec_session_start();
         <?php if (login_check($mysqli) == true) : ?>
             <p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p>
             
-            <?php                 
-                $output=shell_exec('python pythonTest.py');
-                echo "<pre>";
+            <?php
+                //$output = exec ('echo "raspberry" | sudo -S python pythonTest.py');
+                $output = exec('python3 pythonTest.py');
                 print_r($output);
-                echo "</pre>";
+                
+                //echo "</pre>";
             ?>
                 <p>
                 Welcome to secureIOT! A project for secure smart home devices.
